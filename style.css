@@ -1,0 +1,515 @@
+/* ============================================
+   CYBERPUNK 2.0 – MAIN STYLESHEET
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.6rem;
+    background-color: #0a0a0a;
+    background-image: url('images/cyb-pbkg.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: #f0f0f0;
+    line-height: 1.5;
+}
+
+/* Header & Navigation */
+header {
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(4px);
+    border-bottom: 2px solid #00f3ff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.2rem 2rem;
+}
+
+.logo img {
+    width: 4rem;
+    height: auto;
+    filter: drop-shadow(0 0 4px #00f3ff);
+}
+
+.menu ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #fff;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.menu ul li a:hover {
+    color: #00f3ff;
+    text-shadow: 0 0 6px #00f3ff;
+}
+
+/* Slideshow Container */
+.slideshow-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 4rem auto;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 1.6rem;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.3);
+}
+
+.slide {
+    display: none;
+    animation: fade 0.8s ease;
+}
+
+.slide video {
+    width: 100%;
+    display: block;
+    outline: none;
+}
+
+.caption {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 1rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #00f3ff;
+    letter-spacing: 1px;
+}
+
+.dots-container {
+    text-align: center;
+    margin: 1rem 0 3rem;
+}
+
+.dot {
+    cursor: pointer;
+    height: 1.2rem;
+    width: 1.2rem;
+    margin: 0 0.5rem;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.dot.active, .dot:hover {
+    background-color: #00f3ff;
+    transform: scale(1.2);
+}
+
+@keyframes fade {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}
+
+/* About Section – Grid layout (two rows, two columns) */
+.about-section {
+    max-width: 1200px;
+    margin: 6rem auto;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 2rem;
+    backdrop-filter: blur(2px);
+    border-left: 4px solid #00f3ff;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.about-text h3 {
+    font-size: 2.4rem;
+    color: #00f3ff;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.about-text h2 {
+    font-size: 2rem;
+    margin: 1rem 0;
+    color: #fff;
+}
+
+.about-text p {
+    font-size: 1.6rem;
+    color: #ddd;
+}
+
+.about-img img {
+    width: 100%;
+    border-radius: 1.2rem;
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.5);
+    transition: transform 0.3s;
+}
+
+.about-img img:hover {
+    transform: scale(1.02);
+}
+
+/* Team Section */
+.team-section {
+    max-width: 1200px;
+    margin: 6rem auto;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.team-section h3 {
+    font-size: 2.8rem;
+    color: #00f3ff;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    border-bottom: 2px solid #00f3ff;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+.add-member-btn {
+    background: #00f3ff;
+    color: #000;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.6rem;
+    font-weight: bold;
+    border-radius: 2rem;
+    cursor: pointer;
+    margin: 1rem 0 2rem;
+    transition: 0.2s;
+}
+.add-member-btn:hover {
+    background: #0cc;
+    transform: scale(1.02);
+}
+
+.team-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.team-card {
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(4px);
+    border-radius: 1.2rem;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid rgba(0, 243, 255, 0.3);
+}
+
+.team-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 243, 255, 0.2);
+    border-color: #00f3ff;
+}
+
+.team-card img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #00f3ff;
+    margin-bottom: 1rem;
+}
+
+.team-card h4 {
+    font-size: 1.8rem;
+    margin: 0.5rem 0;
+    color: #fff;
+}
+
+.team-card p {
+    font-size: 1.4rem;
+    color: #00f3ff;
+    font-weight: 600;
+}
+
+.card-actions {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+}
+
+.edit-member, .delete-member {
+    background: #222;
+    color: #fff;
+    border: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 1.2rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: 0.2s;
+}
+.edit-member:hover {
+    background: #00f3ff;
+    color: #000;
+}
+.delete-member:hover {
+    background: #ff4444;
+}
+
+/* API Section (Cyberpunk Database) */
+.api-section {
+    max-width: 1200px;
+    margin: 6rem auto;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 2rem;
+    backdrop-filter: blur(2px);
+    border: 1px solid rgba(0, 243, 255, 0.3);
+}
+
+.api-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.api-header h3 {
+    font-size: 2.4rem;
+    color: #00f3ff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.api-btn {
+    background: #00f3ff;
+    color: #000;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.6rem;
+    font-weight: bold;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.api-btn:hover {
+    background: #0cc;
+    transform: scale(1.02);
+}
+
+.api-content {
+    padding: 1rem;
+    border-top: 1px solid rgba(0, 243, 255, 0.3);
+    min-height: 200px;
+}
+
+.api-placeholder {
+    text-align: center;
+    color: #aaa;
+    font-style: italic;
+}
+
+.cyber-item {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    border-left: 4px solid #00f3ff;
+}
+
+.cyber-item h4 {
+    color: #00f3ff;
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+}
+
+.cyber-item p {
+    color: #ddd;
+    line-height: 1.5;
+}
+
+/* Footer */
+footer {
+    background-color: #050505;
+    padding: 3rem 2rem 1.5rem;
+    margin-top: 6rem;
+    border-top: 2px solid #00f3ff;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.footer-form {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-form h3 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #00f3ff;
+}
+
+.footer-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.footer-form input {
+    padding: 0.8rem 1rem;
+    font-size: 1.4rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #222;
+    color: #fff;
+    outline: none;
+    transition: 0.2s;
+}
+.footer-form input:focus {
+    background-color: #333;
+    border-left: 3px solid #00f3ff;
+}
+.footer-form button {
+    background-color: #00f3ff;
+    color: #000;
+    border: none;
+    padding: 0.8rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.footer-form button:hover {
+    background-color: #0cc;
+    transform: scale(0.98);
+}
+
+.footer-right {
+    flex: 1;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+}
+.social-links a {
+    color: #fff;
+    font-size: 2rem;
+    transition: color 0.3s, transform 0.2s;
+}
+.social-links a:hover {
+    color: #00f3ff;
+    transform: translateY(-3px);
+}
+
+.cyber-message {
+    background-color: rgba(0, 243, 255, 0.1);
+    border-left: 4px solid #00f3ff;
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+.cyber-message p {
+    font-size: 1.4rem;
+    color: #ccc;
+    line-height: 1.5;
+}
+
+footer > p {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #888;
+    border-top: 1px solid #222;
+    padding-top: 1.5rem;
+    margin-top: 1rem;
+}
+
+#backToTopBtn {
+    display: block;
+    margin: 1.5rem auto 0;
+    background-color: #00f3ff;
+    color: #000;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.4rem;
+    transition: all 0.3s;
+}
+#backToTopBtn:hover {
+    background-color: #0cc;
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .slideshow-container {
+        margin: 2rem 1rem;
+    }
+    .about-section {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .team-container {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    }
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .social-links {
+        justify-content: center;
+    }
+}
+@media (max-width: 480px) {
+    .team-card img {
+        width: 90px;
+        height: 90px;
+    }
+}

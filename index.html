@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyberpunk2.0</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="images/logo.jpg" alt="Cyberpunk logo">
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Slideshow (videos) -->
+    <div class="slideshow-container">
+        <div class="slide fade">
+            <video controls>
+                <source src="videos/cyberpunk_edgerunners_trailer.mp4" type="video/mp4">
+                Your browser does not support video.
+            </video>
+            <div class="caption">Cyberpunk: Edgerunners Trailer</div>
+        </div>
+        <div class="slide fade">
+            <video controls>
+                <source src="videos/V_Never_Stop_Fighting_Cyberpunk_2077_2.mp4" type="video/mp4">
+                Your browser does not support video.
+            </video>
+            <div class="caption">Cyberpunk: Game of the Year Trailer</div>
+        </div>
+    </div>
+    <div class="dots-container">
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+
+    <!-- About Section (two rows: text left / image right) -->
+    <section id="about" class="about-section">
+        <!-- Row 1 -->
+         <div class="about-img">
+            <img src="images/neon.jpg" alt="Neon cyberpunk cityscape">
+        </div>
+        <div class="about-text">
+            <h3>About CyberPunk: Edgerunners</h3>
+            <h2>Immerse yourself in the neon‑lit future</h2>
+            <p>Cyberpunk: Edgerunners is a standalone anime series set in the same universe as Cyberpunk 2077. It follows a street kid named David as he fights to survive in a world of cybernetic enhancements, corporate corruption, and ruthless mercenaries. Watch it for its breathtaking animation, emotional depth, and a story that captures the essence of the cyberpunk genre – rebellion, identity, and the cost of being human.</p>
+        </div>
+        <!-- Row 2 -->
+        <div class="about-text">
+            <h3>Why watch it?</h3>
+            <p>If you love intense action, stunning visuals from Studio Trigger, and a heartbreakingly good story, Edgerunners delivers. It’s a must‑watch for any anime fan – even if you’ve never played the game.</p>
+        </div>
+        <div class="about-img">
+            <img src="images/wd.jpg" alt="Another cyberpunk scene">
+        </div>
+    </section>
+
+    <!-- Team Section (CRUD with localStorage) -->
+    <section id="team" class="team-section">
+        <h3>Meet The Team</h3>
+        <button id="addMemberBtn" class="add-member-btn">+ Add New Member</button>
+        <div id="teamContainer" class="team-container"></div>
+    </section>
+
+    <!-- Cyberpunk Database API Section (local) -->
+    <section id="cyberpunk-api" class="api-section">
+        <div class="api-header">
+            <h3>Cyberpunk Database</h3>
+            <button id="fetchCyberpunkBtn" class="api-btn">Load Random Cyberpunk Data</button>
+        </div>
+        <div id="api-content" class="api-content">
+            <p class="api-placeholder">Click the button to load Cyberpunk content.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-container">
+            <div class="footer-form">
+                <h3>Contact Us</h3>
+                <form action="#" method="post">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <input type="tel" name="phone" placeholder="Your Phone Number">
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+            <div class="footer-right">
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="cyber-message">
+                    <p>✨ Welcome to the future. Cyberpunk isn't just a game – it's a vision. Explore, fight, and rise as a legend of Night City. ✨</p>
+                </div>
+            </div>
+        </div>
+        <p>&copy; 2025 Cyberpunk 2.0. All rights reserved.</p>
+        <button id="backToTopBtn">Back to Top</button>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
